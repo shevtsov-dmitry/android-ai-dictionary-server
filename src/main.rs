@@ -10,18 +10,16 @@ const OLLAMA_MODEL: &str = "llama3.2:1b";
 
 const PROMPT: &str = "
 You are a helpful assistant that defines content from English for non-native speaker.
+Your task is to define [{content}]
+Define [{content}] in style of Longman and Macmillan dictionaries (dictionary that sounds like a real human explaining things, not a stiff academic definition).
 
-Your task is to define this content in square brackets [{content}]
-
-Define content in style of Longman and Macmillan dictionaries (dictionary that sounds like a real human explaining things, not a stiff academic definition).
-
-If a content can be defined briefly and shortly - use that definition, instead of a long one.
-If a content have multiple definitions or meanings - give multiple meanings and use • on each new line to split them like in list view.
-if a content is not a word, but a sentence - try to explain the meaning of it more broadly explaining each part and how they related to each other without too much specific language grammar, just meanings.
+If a [{content}] can be defined briefly and shortly - use that definition, instead of a long one.
+If a [{content}] have multiple definitions or meanings - give multiple meanings and use • on each new line to split them like in list view.
+if a [{content}] is not a word, but a sentence - try to explain the meaning of it more broadly explaining each part and how they related to each other without too much specific language grammar, just meanings.
 
 Do not use synonyms to give word definition, or use them rarely when a rare word can be simply defined by easier word.
 Do not create examples.
-Do not ask for another help options, return only related definition to the content.
+Do not ask for another help options, return only related definition to the [{content}].
 ";
 
 const URL_NAME: &str = "/ai-dictionary";
