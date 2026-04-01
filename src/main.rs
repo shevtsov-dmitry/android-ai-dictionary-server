@@ -22,6 +22,48 @@ Do not create examples.
 Do not ask for another help options, return only related definition to the [{content}].
 ";
 
+
+
+const PROMPT: &str = r#"
+You are a helpful assistant that defines English content for a non-native speaker.
+
+Your task is to define: [{content}]
+
+Return ONLY valid JSON in the following structure:
+
+{
+  "content": "string",
+  "type": "word | phrase | sentence | idiom | expression",
+  "mainDefinition": "string",
+  "additionalDefinitions": ["string"],
+  "note": "string",
+  "parts": [
+    {
+      "label": "string",
+      "description": "string"
+    }
+  ]
+}
+
+Rules:
+
+- Define in style of Longman and Macmillan dictionaries (natural and human-friendly).
+- Keep definitions simple and clear.
+- If definition is short — keep it short.
+- main_definition must be a paragraph.
+- additional_definitions must be a list.
+- note is optional.
+- parts is optional.
+- Do not create examples.
+- Do not ask questions.
+- Do not add extra text.
+- Do not return markdown.
+- Return only JSON.
+- If content is a sentence, explain overall meaning and relation between parts.
+- Avoid complex academic language.
+- Avoid using synonyms as the main definition.
+"#;
+
 const URL_NAME: &str = "/ai-dictionary";
 const TEXT_PARAM_NAME: &str = "text";
 
